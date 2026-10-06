@@ -1,0 +1,23 @@
+{
+ "url": "https://decant.foo",
+ "token": "di_kYyiaJMLb1TUrapkGgEbDEb-C3KdzwVC",
+ "course": "ics45c",
+ "assignment": "hw1",
+ "include": [
+  "src/**",
+  "gtest/*.cpp"
+ ],
+ "exclude": [
+  "build/**",
+  ".coursetools/**",
+  "gtest/gtestmain.cpp",
+  "*.o",
+  "*.class"
+ ],
+ "snapshot": "text-under-cap",
+ "max_file_bytes": 262144,
+ "max_event_bytes": 1048576,
+ "log_tail_bytes": 32768,
+ "timeout_seconds": 5,
+ "client_version": "0.3.0"
+}
