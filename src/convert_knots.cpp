@@ -7,4 +7,5 @@ int main(){
     cout << "Enter knots: ";
     cin >> knots;
     cout << knots << " knots is equal to " << knots_to_miles_per_minute(knots) << " miles per minute." << endl;
+    return 0;
 }
