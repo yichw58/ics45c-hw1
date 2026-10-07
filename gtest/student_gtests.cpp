@@ -25,3 +25,45 @@ TEST(StackTests, PushThenTopSeesTheCharacter) {
 }
 
 // ADD YOUR TESTS HERE:
+TEST(StackTests, EmptyPopReturnsAt){
+    Stack stk;
+    EXPECT_EQ(stk.pop(),'@');
+}
+
+TEST(StackTests, OnePopEmptiesStack){
+    Stack stk;
+    stk.push('c');
+    stk.pop();
+    EXPECT_EQ(stk.pop(),'@');
+}
+
+TEST(StackTests, PushAllReversesOrder){
+    Stack stk;
+    push_all(stk, "abc");
+    EXPECT_EQ(stk.pop(),'c');
+    EXPECT_EQ(stk.pop(),'b');
+    EXPECT_EQ(stk.pop(),'a');
+    EXPECT_TRUE(stk.isEmpty());
+}
+
+TEST(StackTests, FullStackRejectsExtraPush){
+    Stack stk;
+    for(int i=0; i < STK_MAX; ++i){
+        stk.push('a');
+    }
+    EXPECT_TRUE(stk.isFull());
+    char old_top = stk.top();
+    stk.push('a');
+    EXPECT_EQ(stk.top(),old_top);
+
+}
+
+TEST(StackTests, PopAllEmptiesStack){
+    Stack stk;
+    push_all(stk, "abc");
+
+    pop_all(stk);
+
+    EXPECT_TRUE(stk.isEmpty());
+    EXPECT_EQ(stk.top(), '@');
+}
