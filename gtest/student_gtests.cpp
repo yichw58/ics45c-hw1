@@ -33,7 +33,7 @@ TEST(StackTests, EmptyPopReturnsAt){
 TEST(StackTests, OnePopEmptiesStack){
     Stack stk;
     stk.push('c');
-    stk.pop();
+    EXPECT_EQ(stk.pop(),'c');
     EXPECT_EQ(stk.pop(),'@');
 }
 
@@ -53,8 +53,9 @@ TEST(StackTests, FullStackRejectsExtraPush){
     }
     EXPECT_TRUE(stk.isFull());
     char old_top = stk.top();
-    stk.push('a');
+    stk.push('z');
     EXPECT_EQ(stk.top(),old_top);
+    EXPECT_TRUE(stk.isFull());
 
 }
 
